@@ -1,0 +1,8 @@
+﻿.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+state/review_cases.json
+state/*.tmp
+outputs/support_chat_log.jsonl
