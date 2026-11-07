@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instamart Help</title>
+<link rel="stylesheet" href="/ui/app.css">
+<style>
+.wrap{max-width:1000px;margin:0 auto;padding:18px 16px 40px}
+.steps{display:flex;gap:8px;justify-content:center;margin:6px 0 20px;flex-wrap:wrap}
+.step{display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:30px;background:#fff;
+  border:1.5px solid var(--line);font-size:13px;font-weight:700;color:var(--muted)}
+.step b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e8eef5;font-size:12px}
+.step.on{border-color:var(--green);color:var(--green-d);background:#f1fbf7}
+.step.on b{background:var(--green);color:#fff}
+.step.done b{background:var(--navy);color:#fff}
+.view{display:none}.view.show{display:block}
+.panel{padding:28px;max-width:520px;margin:0 auto}
+.panel h1,.head h1{margin:0 0 6px;font-size:26px}
+.panel p.lead{margin:0 0 18px;color:var(--muted)}
+.field{display:block;margin-bottom:14px;font-size:14px;font-weight:700}
+.field input{display:block;width:100%;margin-top:5px;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;font-size:16px}
+.field input.bad{border-color:var(--red)}
+.hint{font-size:12px;color:var(--muted);font-weight:500;margin-top:3px}
+.err{color:var(--red);font-size:13px;min-height:18px;margin:4px 0 8px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
+.link{background:none;border:0;color:#1672ce;font-weight:650;cursor:pointer;padding:8px;min-height:44px;text-decoration:underline}
+.head{margin-bottom:16px}.head p{margin:0;color:var(--muted)}
+.me-chip{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1.5px solid var(--line);border-radius:30px;padding:6px 8px 6px 14px;font-size:13px;margin-top:10px}
+.topics{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px;margin-top:16px}
+.topic{display:flex;gap:14px;align-items:center;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:18px;
+  padding:18px;cursor:pointer;min-height:84px;box-shadow:0 6px 18px #15375b0a;transition:transform .12s,border-color .12s}
+.topic:hover{transform:translateY(-2px);border-color:var(--green)}
+.topic .ic{font-size:32px}.topic b{display:block;font-size:17px}.topic small{color:var(--muted);font-size:13px}
+.human-card{margin-top:18px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.chat{display:flex;flex-direction:column;overflow:hidden;min-height:620px}
+.chat-head{padding:14px 18px;background:linear-gradient(110deg,#fff0f5,#fff4e9);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.chat-head h1{margin:0;font-size:19px}.chat-head p{margin:0;color:var(--muted);font-size:13px}
+.banner{margin:12px 16px 4px;border-radius:14px;padding:12px 14px;display:none;background:#fff7e6;border:1.5px solid #f3cf8a;font-size:14px}
+.banner.show{display:block}.banner.done{background:#e9f8ed;border-color:#a9dfbd}
+.banner strong{display:block;margin-bottom:2px}
+.messages{flex:1;overflow-y:auto;padding:16px 18px;min-height:280px;max-height:52vh}
+.row{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}.row.me{justify-content:flex-end}
+.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.bot .avatar{background:#e5f7f2}.agent .avatar{background:#ffe9d6}.me .avatar{background:#fff1b8}
+.bot .bubble{background:#eefaf2;border-top-left-radius:6px}
+.agent .bubble{background:#fff1e4;border-top-left-radius:6px;border:1px solid #ffd7b5}
+.me .bubble{background:#e6f2ff;border-top-right-radius:6px}
+.sysmsg{text-align:center;font-size:12px;color:var(--muted);margin:8px 0}
+.note{font-size:12px;color:var(--amber);margin-top:6px}
+.typing{font-style:italic;color:var(--muted)}
+.suggest{display:flex;gap:8px;flex-wrap:wrap;padding:6px 16px 0}
+.suggest button{border:1.5px solid #cfe9df;background:#f4fcf9;border-radius:20px;padding:7px 13px;font-size:13px;cursor:pointer;min-height:36px;font-weight:600}
+.suggest button:hover{background:#e3f6ee}
+.composer-wrap{padding:10px 16px 14px;border-top:1px solid var(--line);margin-top:8px}
+.composer{display:flex;gap:10px;align-items:center}
+.composer input{flex:1;min-width:0;border:1.5px solid #13a782;border-radius:28px;padding:12px 18px;min-height:48px;font-size:15px}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.privacy{font-size:12px;color:var(--muted)}
+@media (max-width:520px){.panel{padding:20px}.bubble{max-width:92%}.messages{max-height:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-icon" aria-hidden="true">i</div>
+    <div class="brand-name">instamart</div><div class="brand-sub">Help &amp; Support</div></div>
+</header>
+
+<div class="wrap">
+  <ol class="steps" id="steps" style="list-style:none;padding:0">
+    <li class="step" data-step="1"><b>1</b> Your details</li>
+    <li class="step" data-step="2"><b>2</b> Choose a topic</li>
+    <li class="step" data-step="3"><b>3</b> Chat</li>
+  </ol>
+
+  <!-- PAGE 1: details -->
+  <section class="view" id="view-start" aria-labelledby="t1">
+    <div class="card panel">
+      <h1 id="t1">Welcome 👋</h1>
+      <p class="lead">Tell us who you are so we can help faster. You can skip this, but a human agent can do more with your IDs.</p>
+      <form id="startForm" novalidate>
+        <label class="field">Customer ID
+          <input id="customerId" placeholder="C0001" maxlength="5" autocomplete="off" inputmode="text">
+          <span class="hint">Looks like C0001</span>
+        </label>
+        <label class="field">Order ID
+          <input id="orderId" placeholder="ORD-123456" maxlength="10" autocomplete="off">
+          <span class="hint">Looks like ORD-123456 (only if your question is about an order)</span>
+        </label>
+        <div class="err" id="startErr" role="alert"></div>
+        <div class="btnrow">
+          <button class="btn" type="submit">Continue ➤</button>
+          <button class="link" type="button" id="skip">Skip for now</button>
+        </div>
+        <p class="hint" style="margin-top:14px">🔒 Never type card numbers, PINs or OTPs on this site.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- PAGE 2: topics -->
+  <section class="view" id="view-topics" aria-labelledby="t2">
+    <div class="head">
+      <h1 id="t2">How can we help?</h1>
+      <p>Pick a topic and our assistant will take it from there.</p>
+      <div class="me-chip"><span id="who"></span><button class="link" id="changeDetails" type="button" style="min-height:32px;padding:2px 8px">Change</button></div>
+    </div>
+    <div class="topics" id="topics"></div>
+    <div class="card human-card">
+      <div><b>Prefer a person?</b><div class="hint">A human agent will review your case and reply on this page.</div></div>
+      <button class="btn warn" id="humanFromTopics" type="button">🎧 Talk to a human</button>
+    </div>
+  </section>
+
+  <!-- PAGE 3: chat -->
+  <section class="view" id="view-chat" aria-label="Chat">
+    <div class="card chat">
+      <header class="chat-head">
+        <div><h1 id="chatTitle">Instamart Assistant</h1><p id="chatSub">Answers come from our policy documents.</p></div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <span class="pill resolved" id="modePill">● Online</span>
+          <button class="btn ghost small" id="backTopics" type="button">← Topics</button>
+          <button class="btn ghost small" id="newChat" type="button">New chat</button>
+        </div>
+      </header>
+      <div class="banner" id="banner" role="status" aria-live="polite"></div>
+      <div class="messages" id="messages" aria-live="polite" aria-label="Conversation"></div>
+      <div class="suggest" id="suggest" aria-label="Suggested questions"></div>
+      <div class="composer-wrap">
+        <form class="composer" id="form">
+          <label for="question" class="sr-only">Your question</label>
+          <input id="question" placeholder="Type your question..." maxlength="1000" autocomplete="off" required>
+          <button class="btn" id="send" type="submit">Send ➤</button>
+        </form>
+        <div class="err" id="error" role="alert"></div>
+        <div class="actions">
+          <span class="privacy">🔒 Emails, phones, order IDs and card numbers are hidden before we process your message.</span>
+          <button class="btn ghost small" id="human" type="button">🎧 Talk to a human</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const TOPICS={
+ delivery:{icon:"🚚",title:"Delivery",desc:"Fees, cities, rain delays, OTP",qs:[
+   "What is the delivery fee on small orders?","What happens during heavy rain?","Why do I need to share a one time password for electronics?","How many times will the rider try to contact me?"]},
+ refunds:{icon:"💚",title:"Refunds",desc:"Late delivery, approval, timing",qs:[
+   "What delivery time makes a completed order eligible for a full refund?","Who approves a refund above INR 1000?","When are approved refunds credited to my payment method?","Within how many days must I request a refund?"]},
+ payments:{icon:"💳",title:"Payments & billing",desc:"Failed payments, COD, wallet",qs:[
+   "How soon is money returned when a payment fails but is deducted?","Is cash on delivery available for large orders?","Can wallet balance be refunded as cash?","What should I do if I see two charges for one order?"]},
+ privacy:{icon:"🔒",title:"Privacy",desc:"Your data and account deletion",qs:[
+   "When are delivery addresses deleted from active systems?","How long does account deletion take?","Are my card numbers stored?"]},
+ fraud:{icon:"🛡️",title:"Fraud & safety",desc:"Unauthorized transactions",qs:[
+   "I see a payment I did not authorize","How fast must a fraud ticket reach the security team?"]},
+ other:{icon:"💬",title:"Something else",desc:"Ask anything about our policies",qs:[
+   "How fast are support tickets answered?","What does the assistant do when it cannot resolve a ticket?"]}
+};
+const KEY="instamartHelp";
+let st=Object.assign({session:"",customer_id:"",order_id:"",topic:"",started:false},JSON.parse(sessionStorage.getItem(KEY)||"{}"));
+function save(){sessionStorage.setItem(KEY,JSON.stringify(st));}
+function newSession(){const a=new Uint8Array(16);crypto.getRandomValues(a);return Array.from(a,b=>b.toString(16).padStart(2,"0")).join("");}
+if(!st.session){st.session=newSession();save();}
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+let caseId=null,seen=0,pollTimer=null,busy=false;
+
+/* ---------- router ---------- */
+function go(h){ if(location.hash!==h) location.hash=h; else route(); }
+function route(){
+  let r=location.hash.replace("#","")||"/";
+  if(r==="/topics"&&!st.started) r="/";
+  if(r==="/chat"&&!st.topic) r="/topics";
+  if(r!=="/"&&r!=="/topics"&&r!=="/chat") r="/";
+  const n={"/":1,"/topics":2,"/chat":3}[r];
+  ["start","topics","chat"].forEach((v,i)=>$("view-"+v).classList.toggle("show",i+1===n));
+  document.querySelectorAll(".step").forEach(s=>{const k=+s.dataset.step;s.classList.toggle("on",k===n);s.classList.toggle("done",k<n);});
+  if(n===1) initStart(); if(n===2) initTopics(); if(n===3) initChat();
+  if(n!==3) stopPolling();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+
+/* ---------- page 1 ---------- */
+function initStart(){ $("customerId").value=st.customer_id; $("orderId").value=st.order_id; $("startErr").textContent=""; }
+$("startForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const c=$("customerId").value.trim().toUpperCase(), o=$("orderId").value.trim().toUpperCase();
+  const cOk=!c||/^C\d{4}$/.test(c), oOk=!o||/^ORD-\d{6}$/.test(o);
+  $("customerId").classList.toggle("bad",!cOk); $("orderId").classList.toggle("bad",!oOk);
+  if(!cOk||!oOk){$("startErr").textContent=!cOk?"Customer ID should look like C0001.":"Order ID should look like ORD-123456.";return;}
+  if(c!==st.customer_id||o!==st.order_id){ resetChat(); }
+  st.customer_id=c; st.order_id=o; st.started=true; save(); go("#/topics");
+});
+$("skip").addEventListener("click",()=>{ if(st.customer_id||st.order_id) resetChat(); st.customer_id="";st.order_id="";st.started=true;save();go("#/topics"); });
+
+/* ---------- page 2 ---------- */
+function initTopics(){
+  $("who").textContent = st.customer_id||st.order_id ? ["Customer "+(st.customer_id||"not given"),"Order "+(st.order_id||"not given")].join(" · ") : "No details added";
+  const box=$("topics"); if(box.childElementCount) return;
+  Object.keys(TOPICS).forEach(k=>{
+    const t=TOPICS[k], b=el("button","topic"); b.type="button";
+    b.appendChild(el("span","ic",t.icon)); const d=el("span"); d.appendChild(el("b","",t.title)); d.appendChild(el("small","",t.desc)); b.appendChild(d);
+    b.addEventListener("click",()=>{ if(st.topic!==k){ resetChat(); st.topic=k; save(); } go("#/chat"); });
+    box.appendChild(b);});
+}
+$("changeDetails").addEventListener("click",()=>go("#/"));
+$("humanFromTopics").addEventListener("click",()=>{ if(!st.topic){ st.topic="other"; save(); } go("#/chat"); pendingHuman=true; });
+let pendingHuman=false;
+
+/* ---------- page 3 ---------- */
+function addMsg(kind,label,text,sources,note){
+  const row=el("div","row "+kind);
+  const av=el("div","avatar",kind==="me"?"🙂":kind==="agent"?"🧑‍💼":"🤖"); av.setAttribute("aria-hidden","true");
+  const b=el("div","bubble"); b.appendChild(el("div","label",label)); const t=el("div","text",text); b.appendChild(t);
+  addSources(b,sources); if(note) b.appendChild(el("div","note",note));
+  if(kind==="me"){row.appendChild(b);row.appendChild(av);}else{row.appendChild(av);row.appendChild(b);}
+  $("messages").appendChild(row); $("messages").scrollTop=$("messages").scrollHeight; return {row,t,b};
+}
+function addSources(b,sources){ if(!sources||!sources.length) return; const s=el("div","sources"); s.appendChild(el("span","","Sources:"));
+  sources.forEach(x=>s.appendChild(el("span","chip",x.replace(".txt","").replace("_"," ")))); b.appendChild(s); }
+function sys(text){ $("messages").appendChild(el("div","sysmsg",text)); }
+function renderSuggest(){
+  const box=$("suggest"); box.replaceChildren(); if(caseId) return;
+  (TOPICS[st.topic]||TOPICS.other).qs.forEach(q=>{const b=el("button","",q); b.type="button"; b.addEventListener("click",()=>ask(q,false)); box.appendChild(b);});
+}
+function showBanner(h,done,working){
+  const sla=h.sla?" Expected reply "+h.sla+".":"";
+  const b=$("banner"); b.className="banner show"+(done?" done":"");
+  b.replaceChildren(el("strong","",(done?"✅ Resolved":"🎧 Transferred to a human")+" · Case "+h.case_id),
+    el("span","",done?"A human agent marked your case as resolved. Write below to reopen it.":
+      (working?"An agent is working on your case. Keep this page open to see their reply.":"A human agent will review this."+sla+" Keep this page open to see their reply.")));
+  $("modePill").className="pill "+(done?"resolved":"open"); $("modePill").textContent=done?"● Resolved":"● With a human";
+  $("suggest").replaceChildren();
+}
+function greet(){
+  const t=TOPICS[st.topic]||TOPICS.other;
+  addMsg("bot","Instamart Assistant",t.icon+" "+t.title+": ask me anything, or tap a suggestion below. If I can't help, or something needs a person, I'll connect you with a human agent.");
+}
+async function initChat(){
+  const t=TOPICS[st.topic]||TOPICS.other;
+  $("chatTitle").textContent=t.icon+" "+t.title; $("chatSub").textContent="Answers come from our policy documents."+(st.customer_id?" · "+st.customer_id:"");
+  if($("messages").dataset.topic===st.topic+st.session && !pendingHuman){ renderSuggest(); startPollingIfNeeded(); return; }
+  $("messages").replaceChildren(); $("messages").dataset.topic=st.topic+st.session; $("banner").className="banner"; $("error").textContent="";
+  $("modePill").className="pill resolved"; $("modePill").textContent="● Online"; caseId=null; seen=0;
+  try{
+    const r=await fetch("/api/history?session="+st.session); const d=r.ok?await r.json():{messages:[],case:null};
+    if(d.messages.length){
+      d.messages.forEach(m=>{ if(m.role==="customer") addMsg("me","You",m.text);
+        else if(m.role==="assistant") addMsg("bot","Instamart Assistant",m.text,m.sources);
+        else if(m.role==="agent") addMsg("agent","Support agent"+(m.agent?" · "+m.agent:""),m.text);
+        else sys(m.text); });
+      if(d.case){ caseId=d.case.case_id; seen=d.case.total; showBanner(d.case,d.case.status==="resolved",d.case.status==="in_progress"); startPolling(); }
+    } else greet();
+  }catch(_){ greet(); }
+  renderSuggest(); $("messages").scrollTop=$("messages").scrollHeight;
+  if(pendingHuman){ pendingHuman=false; ask("I would like to talk to a human agent.",true); }
+}
+function setBusy(v){busy=v;$("send").disabled=v;$("human").disabled=v;$("send").textContent=v?"Thinking...":"Send ➤";}
+function details(){return {customer_id:st.customer_id,order_id:st.order_id};}
+async function post(url,body){
+  const r=await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  const d=await r.json().catch(()=>({error:"Unexpected response."}));
+  if(!r.ok) throw new Error(d.error||"Request failed."); return d;
+}
+async function ask(text,viaButton){
+  text=text.trim(); if(!text||busy) return;
+  $("error").textContent=""; setBusy(true); $("suggest").replaceChildren();
+  addMsg("me","You",text);
+  const w=addMsg("bot","Instamart Assistant",caseId?"Passing your message to the agent...":"Looking through our policies...");
+  w.t.classList.add("typing"); $("question").value="";
+  try{
+    const d=await post(viaButton?"/api/human":"/api/chat",Object.assign({session:st.session,message:text},details()));
+    w.t.classList.remove("typing");
+    if(d.reply){ w.t.textContent=d.reply; addSources(w.b,d.sources); if(d.note) w.b.appendChild(el("div","note",d.note)); }
+    else if(caseId||d.handoff){ w.t.textContent="Your message was added to the case. An agent will reply here."; if(d.note) w.b.appendChild(el("div","note",d.note)); }
+    else { w.row.remove(); }
+    if(d.handoff){ caseId=d.handoff.case_id; showBanner(d.handoff,false,false); startPolling(); }
+    else { if(d.suggest_human) w.b.appendChild(el("div","note","Not what you needed? Use “Talk to a human”.")); renderSuggest(); }
+  }catch(e){ w.row.remove(); $("error").textContent=e.message; if(!viaButton) $("question").value=text; renderSuggest(); }
+  finally{ setBusy(false); $("question").focus(); $("messages").scrollTop=$("messages").scrollHeight; }
+}
+function startPollingIfNeeded(){ if(caseId) startPolling(); }
+function startPolling(){ if(pollTimer) return; pollTimer=setInterval(poll,4000); poll(); }
+function stopPolling(){ clearInterval(pollTimer); pollTimer=null; }
+async function poll(){
+  if(!caseId) return;
+  try{
+    const r=await fetch("/api/case/"+caseId+"?session="+st.session+"&after="+seen); if(!r.ok) return; const d=await r.json();
+    d.messages.forEach(m=>{ if(m.role==="agent") addMsg("agent","Support agent"+(m.agent?" · "+m.agent:""),m.text); });
+    seen=d.total;
+    showBanner({case_id:d.id,sla:d.sla},d.status==="resolved",d.status==="in_progress");
+  }catch(_){}
+}
+function resetChat(){ stopPolling(); caseId=null; seen=0; st.session=newSession(); save(); $("messages").dataset.topic=""; $("messages").replaceChildren(); }
+$("form").addEventListener("submit",e=>{e.preventDefault();ask($("question").value,false);});
+$("human").addEventListener("click",()=>ask("I would like to talk to a human agent.",true));
+$("backTopics").addEventListener("click",()=>go("#/topics"));
+$("newChat").addEventListener("click",()=>{ resetChat(); st.topic=""; save(); go("#/topics"); });
+route();
+})();
+</script>
+</body>
+</html>

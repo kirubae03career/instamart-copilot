@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instamart Agent Desk</title>
+<link rel="stylesheet" href="/ui/app.css">
+<style>
+body{background:#eef3f9}
+.wrap{max-width:1250px;margin:0 auto;padding:18px 16px 40px}
+.steps{display:flex;gap:8px;justify-content:center;margin:4px 0 18px;flex-wrap:wrap;list-style:none;padding:0}
+.step{display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:30px;background:#fff;border:1.5px solid var(--line);font-size:13px;font-weight:700;color:var(--muted)}
+.step b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e8eef5;font-size:12px}
+.step.on{border-color:#1672ce;color:#1257a0;background:#eef6ff}.step.on b{background:#1672ce;color:#fff}.step.done b{background:var(--navy);color:#fff}
+.view{display:none}.view.show{display:block}
+.panel{padding:28px;max-width:440px;margin:6vh auto 0}
+.panel h1{margin:0 0 6px;font-size:25px}.panel p{margin:0 0 18px;color:var(--muted)}
+.field{display:block;margin-bottom:14px;font-size:14px;font-weight:700}
+.field input{display:block;width:100%;margin-top:5px;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;min-height:48px;font-size:16px}
+.err{color:var(--red);font-size:13px;min-height:18px;margin:4px 0 8px}
+.hint{font-size:12px;color:var(--muted);font-weight:500}
+.who{display:flex;align-items:center;gap:10px;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:14px}
+.stat{padding:12px 16px}.stat b{font-size:26px;display:block;line-height:1.1}.stat span{font-size:12px;color:var(--muted)}
+.stat.alert b{color:var(--red)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:20px;padding:6px 14px;cursor:pointer;font-size:13px;font-weight:650;min-height:36px}
+.tab[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.filters input{flex:1;min-width:200px;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;min-height:40px}
+.items{display:flex;flex-direction:column;gap:10px}
+.item{display:block;width:100%;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:16px;padding:14px 16px;cursor:pointer;box-shadow:0 4px 14px #15375b08}
+.item:hover{border-color:#1672ce;background:#fbfdff}
+.item .top{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap}
+.item .why{font-weight:700;font-size:15px}.item .last{font-size:13px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:2px}
+.item .meta{font-size:12px;margin-top:6px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;color:var(--muted)}
+.over{color:var(--red);font-weight:700}
+.empty{padding:50px 20px;text-align:center;color:var(--muted)}
+.back{margin-bottom:10px}
+.detail{display:flex;flex-direction:column;overflow:hidden;min-height:680px}
+.dhead{padding:14px 18px;border-bottom:1px solid var(--line)}
+.dhead h2{margin:0 0 6px;font-size:19px}
+.badges{display:flex;gap:6px;flex-wrap:wrap}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px}
+.info div span{display:block;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase}
+.ordercard{margin:10px 18px 0;padding:10px 14px;border-radius:12px;background:#f2f9ff;border:1px solid #cfe4f7;font-size:13px}
+.ordercard.none{background:#fafafa;border-color:var(--line);color:var(--muted)}
+.suggest{margin-top:4px;font-weight:650}
+.thread{flex:1;overflow-y:auto;padding:14px 18px;min-height:220px;max-height:48vh}
+.m{margin-bottom:12px;display:flex;flex-direction:column}
+.m.customer,.m.assistant{align-items:flex-start}.m.agent{align-items:flex-end}.m.system{align-items:center}
+.m .bubble{max-width:78%;font-size:14px}
+.m.customer .bubble{background:#e6f2ff}.m.assistant .bubble{background:#eefaf2}.m.agent .bubble{background:#fff1e4;border:1px solid #ffd7b5}
+.m.system .bubble{background:#f1f1f1;color:var(--muted);font-size:12px}
+.time{font-size:11px;color:var(--muted);margin-top:2px}
+.reply{border-top:1px solid var(--line);padding:12px 18px;background:#fbfdff}
+.templates{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.reply textarea{width:100%;min-height:76px;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;resize:vertical}
+.reply .bar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.reply .bar input{border:1.5px solid var(--line);border-radius:10px;padding:7px 10px;min-height:36px;flex:1;min-width:140px}
+.spacer{flex:1}
+@media (max-width:800px){.stats{grid-template-columns:repeat(2,1fr)}.thread{max-height:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-icon" aria-hidden="true">i</div><div class="brand-name">instamart</div><div class="brand-sub">Agent Desk · Human review</div></div>
+  <div class="who" id="who" style="display:none"><span>Signed in as <b id="whoName"></b></span><button class="btn ghost small" id="logout" type="button">Sign out</button></div>
+</header>
+
+<div class="wrap">
+  <ol class="steps" id="steps">
+    <li class="step" data-step="1"><b>1</b> Sign in</li>
+    <li class="step" data-step="2"><b>2</b> Issues</li>
+    <li class="step" data-step="3"><b>3</b> Case</li>
+  </ol>
+
+  <!-- PAGE 1: sign in -->
+  <section class="view" id="view-login" aria-labelledby="t1">
+    <div class="card panel">
+      <h1 id="t1">Agent Desk</h1>
+      <p>Enter your name and the access code shown in the server terminal.</p>
+      <form id="loginForm">
+        <label class="field">Your name
+          <input id="agentName" placeholder="e.g. Kiruba" maxlength="40" autocomplete="name" required>
+        </label>
+        <label class="field">Access code
+          <input id="code" type="password" autocomplete="off" placeholder="Access code" required>
+        </label>
+        <div class="err" id="loginErr" role="alert"></div>
+        <button class="btn" type="submit" style="width:100%">Sign in ➤</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- PAGE 2: issues -->
+  <section class="view" id="view-issues" aria-label="Issues">
+    <section class="stats" id="stats" aria-label="Queue summary"></section>
+    <div class="filters">
+      <div class="tabs" id="tabs" role="group" aria-label="Filter by status"></div>
+      <label class="sr-only" for="search">Search issues</label>
+      <input id="search" type="search" placeholder="Search case, customer, order or text...">
+    </div>
+    <div class="items" id="items"></div>
+  </section>
+
+  <!-- PAGE 3: case -->
+  <section class="view" id="view-case" aria-label="Case">
+    <button class="btn ghost small back" id="back" type="button">← All issues</button>
+    <div class="card detail" id="detail"></div>
+  </section>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+let code=sessionStorage.getItem("agentCode")||"", name=localStorage.getItem("agentName")||"", status="open", query="", timer=null, lastSig="", lastDetailSig="", current=null;
+const TEMPLATES={
+  "Looking into it":"Hi, I'm looking into this now and will update you shortly.",
+  "Refund approved":"Your refund has been approved. It will be credited to your original payment method within 5 working days.",
+  "Refund not eligible":"I checked your order. Under our refund policy it is not eligible for a refund, because the delivery was within 45 minutes or the order was cancelled and never charged.",
+  "Fraud: secured":"We have flagged this to our security team. Please do not share your OTP, PIN or card details with anyone. We will contact you shortly.",
+  "Need details":"Could you share your order ID and a short description of what happened so I can check this for you?"
+};
+const STATUS_LABEL={open:"Open",in_progress:"In progress",resolved:"Resolved"};
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e;}
+async function api(path,opts){
+  const r=await fetch(path,Object.assign({headers:{"X-Agent-Code":code,"Content-Type":"application/json"}},opts||{}));
+  if(r.status===401){signOut("Wrong or expired access code.");throw new Error("401");}
+  const d=await r.json(); if(!r.ok) throw new Error(d.error||"Request failed."); return d;
+}
+function fmtDue(due){const s=due-Date.now()/1000,a=Math.abs(s),h=Math.floor(a/3600),m=Math.floor(a%3600/60);const t=h>0?h+"h "+m+"m":m+"m";return s<0?{t:"overdue by "+t,over:true}:{t:"due in "+t,over:false};}
+function fmtTime(ts){return new Date(ts*1000).toLocaleString([],{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});}
+
+/* ---------- router ---------- */
+function go(h){ if(location.hash!==h) location.hash=h; else route(); }
+function route(){
+  let r=location.hash.replace("#","")||"/";
+  const m=r.match(/^\/case\/(HR-\d{4,})$/);
+  if(!code){ r="/"; } else if(r==="/"||(!m&&r!=="/issues")) r="/issues";
+  const n=r==="/"?1:m?3:2;
+  ["login","issues","case"].forEach((v,i)=>$("view-"+v).classList.toggle("show",i+1===n));
+  document.querySelectorAll(".step").forEach(s=>{const k=+s.dataset.step;s.classList.toggle("on",k===n);s.classList.toggle("done",k<n);});
+  $("who").style.display=code?"flex":"none"; $("whoName").textContent=name;
+  clearInterval(timer); timer=null;
+  if(n===1){ $("agentName").value=name; }
+  if(n===2){ current=null; renderTabs(); lastSig=""; load(); timer=setInterval(load,5000); }
+  if(n===3){ current=m[1]; lastDetailSig=""; loadDetail(); timer=setInterval(()=>loadDetail(true),4000); }
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+function signOut(msg){ sessionStorage.removeItem("agentCode"); code=""; $("loginErr").textContent=msg||""; go("#/"); route(); }
+$("logout").addEventListener("click",()=>signOut(""));
+$("back").addEventListener("click",()=>go("#/issues"));
+
+/* ---------- page 1 ---------- */
+$("loginForm").addEventListener("submit",async e=>{
+  e.preventDefault(); const n=$("agentName").value.trim(), c=$("code").value.trim(); $("loginErr").textContent="";
+  if(!n){$("loginErr").textContent="Please enter your name.";return;}
+  const r=await fetch("/api/agent/cases?status=open",{headers:{"X-Agent-Code":c}});
+  if(!r.ok){$("loginErr").textContent="Wrong access code.";return;}
+  code=c; name=n; sessionStorage.setItem("agentCode",c); localStorage.setItem("agentName",n); $("code").value=""; go("#/issues"); route();
+});
+
+/* ---------- page 2 ---------- */
+function renderTabs(){
+  const tabs=$("tabs"); tabs.replaceChildren();
+  [["open","Open"],["in_progress","In progress"],["resolved","Resolved"],["all","All"]].forEach(([k,l])=>{
+    const b=el("button","tab",l); b.type="button"; b.setAttribute("aria-pressed",String(status===k));
+    b.onclick=()=>{status=k;lastSig="";renderTabs();load();}; tabs.appendChild(b);});
+}
+function renderStats(s){
+  const box=$("stats"); box.replaceChildren();
+  [["Open",s.open,""],["In progress",s.in_progress,""],["High priority (active)",s.high,s.high?"alert":""],["Overdue",s.overdue,s.overdue?"alert":""],["Resolved",s.resolved,""]].forEach(([l,v,c])=>{
+    const d=el("div","card stat "+c); d.appendChild(el("b","",String(v))); d.appendChild(el("span","",l)); box.appendChild(d);});
+}
+function renderList(cases){
+  const box=$("items"); box.replaceChildren();
+  if(!cases.length){box.appendChild(el("div","card empty","No issues here. 🎉")); return;}
+  cases.forEach(c=>{
+    const b=el("button","item"); b.type="button";
+    const top=el("div","top"); top.appendChild(el("strong","",c.id));
+    const bd=el("span","badges"); bd.appendChild(el("span","pill "+c.priority,c.priority==="high"?"High priority":"Normal"));
+    bd.appendChild(el("span","pill "+c.status,STATUS_LABEL[c.status])); if(c.premium) bd.appendChild(el("span","pill premium","Premium")); top.appendChild(bd); b.appendChild(top);
+    b.appendChild(el("div","why",c.reason)); b.appendChild(el("div","last",c.last));
+    const meta=el("div","meta"); meta.appendChild(el("span","","Customer "+(c.customer_id||"not given")));
+    if(c.order_id) meta.appendChild(el("span","","· "+c.order_id));
+    meta.appendChild(el("span","","· "+c.messages+" messages"));
+    if(c.status!=="resolved"){const d=fmtDue(c.due); meta.appendChild(el("span",d.over?"over":"","· "+d.t));}
+    if(c.assigned_to) meta.appendChild(el("span","","· "+c.assigned_to)); b.appendChild(meta);
+    b.onclick=()=>go("#/case/"+c.id); box.appendChild(b);});
+}
+async function load(){
+  try{
+    const d=await api("/api/agent/cases?status="+encodeURIComponent(status)+"&q="+encodeURIComponent(query));
+    renderStats(d.stats); const sig=JSON.stringify(d.cases); if(sig!==lastSig){lastSig=sig; renderList(d.cases);}
+  }catch(e){}
+}
+$("search").addEventListener("input",e=>{query=e.target.value;lastSig="";clearTimeout(window._s);window._s=setTimeout(load,250);});
+
+/* ---------- page 3 ---------- */
+async function loadDetail(quiet){
+  if(!current) return;
+  try{
+    const c=await api("/api/agent/case/"+current);
+    const sig=JSON.stringify([c.status,c.transcript.length,c.assigned_to]);
+    if(quiet&&sig===lastDetailSig) return; lastDetailSig=sig; renderDetail(c);
+  }catch(e){ if(String(e.message)!=="401") $("detail").replaceChildren(el("div","empty","Case not found.")); }
+}
+function renderDetail(c){
+  const box=$("detail"); const prev=box.querySelector("textarea"); const draft=prev?prev.value:"";
+  const keepNote=box.querySelector("#note")?box.querySelector("#note").value:""; box.replaceChildren();
+  const head=el("div","dhead"); head.appendChild(el("h2","",c.id+" · "+c.reason));
+  const bd=el("div","badges"); bd.appendChild(el("span","pill "+c.priority,c.priority==="high"?"High priority":"Normal priority"));
+  bd.appendChild(el("span","pill "+c.status,STATUS_LABEL[c.status])); if(c.premium) bd.appendChild(el("span","pill premium","Premium customer"));
+  c.flags.forEach(f=>bd.appendChild(el("span","pill flag",f.label))); head.appendChild(bd); box.appendChild(head);
+  const info=el("div","info"); const d=fmtDue(c.due);
+  [["Customer",c.customer_id||"Not given"],["Segment",c.segment||"Unknown"],["Order",c.order_id||"Not given"],["Created",fmtTime(c.created)],["Reply target",c.sla_text],["Status",c.status==="resolved"?"Resolved":d.t],["Assigned to",c.assigned_to||"Nobody yet"]].forEach(([k,v])=>{
+    const x=el("div"); x.appendChild(el("span","",k)); x.appendChild(el("b","",v)); info.appendChild(x);}); box.appendChild(info);
+  const oc=el("div","ordercard"+(c.order?"":" none"));
+  if(c.order){const o=c.order; oc.appendChild(el("div","","Order "+o.order_id+" · "+(o.product||"item")+" × "+o.quantity+" · INR "+Number(o.amount).toFixed(2)+" · "+o.status+(o.delivery_minutes!=null?" · delivered in "+Math.round(o.delivery_minutes)+" min":"")));
+    oc.appendChild(el("div","suggest","Policy check: "+o.suggestion));}
+  else oc.textContent=c.order_id?"Order "+c.order_id+" was not found in the database.":"No order ID given by the customer.";
+  box.appendChild(oc);
+  const th=el("div","thread"); th.setAttribute("aria-label","Conversation");
+  c.transcript.forEach(m=>{
+    const w=el("div","m "+m.role), b=el("div","bubble");
+    const who={customer:"Customer (details masked)",assistant:"Assistant",agent:"Agent"+(m.agent?" · "+m.agent:""),system:""}[m.role];
+    if(who) b.appendChild(el("div","label",who)); b.appendChild(el("div","text",m.text)); w.appendChild(b); w.appendChild(el("div","time",fmtTime(m.ts))); th.appendChild(w);});
+  box.appendChild(th); th.scrollTop=th.scrollHeight;
+  const rp=el("div","reply"), tp=el("div","templates");
+  Object.keys(TEMPLATES).forEach(k=>{const b=el("button","btn ghost small",k); b.type="button"; b.onclick=()=>{ta.value=TEMPLATES[k];ta.focus();}; tp.appendChild(b);}); rp.appendChild(tp);
+  const ta=el("textarea"); ta.placeholder="Write a reply to the customer..."; ta.maxLength=2000; ta.value=draft; ta.setAttribute("aria-label","Reply"); rp.appendChild(ta);
+  const bar=el("div","bar"), send=el("button","btn","Send reply"); send.type="button";
+  send.onclick=async()=>{ if(!ta.value.trim()) return; send.disabled=true;
+    try{await api("/api/agent/case/"+c.id+"/reply",{method:"POST",body:JSON.stringify({text:ta.value,agent:name})}); ta.value=""; lastDetailSig=""; await loadDetail();}
+    catch(e){alert(e.message);} finally{send.disabled=false;}};
+  bar.appendChild(send);
+  if(c.status==="open"){const t=el("button","btn ghost","Take this case"); t.type="button"; t.onclick=()=>setStatus(c.id,"in_progress",""); bar.appendChild(t);}
+  bar.appendChild(el("span","spacer"));
+  if(c.status!=="resolved"){
+    const note=el("input"); note.id="note"; note.placeholder="Resolution note (optional)"; note.maxLength=500; note.value=keepNote; note.setAttribute("aria-label","Resolution note"); bar.appendChild(note);
+    const r=el("button","btn warn","Mark resolved"); r.type="button"; r.onclick=()=>setStatus(c.id,"resolved",note.value); bar.appendChild(r);
+  } else { const r=el("button","btn ghost","Reopen"); r.type="button"; r.onclick=()=>setStatus(c.id,"open",""); bar.appendChild(r);
+    if(c.note) rp.appendChild(el("div","hint","Resolution note: "+c.note)); }
+  rp.appendChild(bar); box.appendChild(rp);
+}
+async function setStatus(id,st,note){
+  try{await api("/api/agent/case/"+id+"/status",{method:"POST",body:JSON.stringify({status:st,note:note,agent:name})}); lastDetailSig=""; await loadDetail();}catch(e){alert(e.message);}
+}
+if(code){ fetch("/api/agent/cases?status=open",{headers:{"X-Agent-Code":code}}).then(r=>{ if(!r.ok){code="";sessionStorage.removeItem("agentCode");} route(); }); } else route();
+})();
+</script>
+</body>
+</html>
