@@ -1,0 +1,9 @@
+{"scenario_id": "S1", "status": "REFUND", "answer": "REFUND: INR 128.25 issued.", "tokens_used": 944, "tool_names": ["get_order", "search_policy", "calculate_refund", "issue_refund"]}
+{"scenario_id": "S2", "status": "REFUND", "answer": "REFUND: INR 135.0 issued.", "tokens_used": 944, "tool_names": ["get_order", "search_policy", "calculate_refund", "issue_refund"]}
+{"scenario_id": "S3", "status": "ESCALATE", "answer": "ESCALATE: refund above INR 1000 sent to a human lead.", "tokens_used": 946, "tool_names": ["get_order", "search_policy", "calculate_refund", "escalate_to_human"]}
+{"scenario_id": "S4", "status": "DENIED", "answer": "DENIED: delivery was within 45 minutes.", "tokens_used": 637, "tool_names": ["get_order", "search_policy", "calculate_refund"]}
+{"scenario_id": "S5", "status": "DENIED", "answer": "DENIED: only completed orders can be refunded.", "tokens_used": 357, "tool_names": ["get_order", "search_policy"]}
+{"scenario_id": "S6", "status": "NOT_FOUND", "answer": "NOT_FOUND: no such order.", "tokens_used": 90, "tool_names": ["get_order"]}
+{"scenario_id": "S7", "status": "FALLBACK_MAX_ITERATIONS", "answer": "Human review required: maximum iterations reached.", "tokens_used": 2928, "tool_names": ["search_policy", "search_policy", "search_policy", "search_policy", "search_policy", "search_policy"]}
+{"scenario_id": "DEMO_TOKEN_LIMIT", "status": "FALLBACK_TOKEN_LIMIT", "answer": "Human review required: token limit reached.", "tokens_used": 47, "tool_names": ["get_order"]}
+{"scenario_id": "DEMO_TIMEOUT", "status": "FALLBACK_TIMEOUT", "answer": "Human review required after simulated timeout.", "tokens_used": 0, "tool_names": []}

@@ -1,0 +1,165 @@
+ticket_id,status,estimated_tokens,redacted_text,email_redactions,phone_redactions,order_id_redactions
+T0024,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0073,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0095,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0159,skipped_empty,0,,0,0,0
+T0080,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0124,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0061,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0118,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0037,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0002,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0163,flagged_long,734,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,0,0,0
+T0031,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0047,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0063,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0121,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0139,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0115,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0123,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0116,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0136,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0008,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0102,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0072,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0101,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0059,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0049,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0153,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0050,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0147,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0074,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0156,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0145,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0053,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0134,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0039,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0016,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0055,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0130,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0099,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0062,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0013,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0137,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0152,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0144,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0094,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0021,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0077,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0036,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0113,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0060,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0043,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0048,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0154,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0125,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0146,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0107,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0011,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0017,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0111,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0041,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0120,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0122,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0001,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0064,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0092,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0038,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0155,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0104,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0012,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0084,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0051,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0143,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0035,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0028,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0100,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0022,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0082,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0127,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0162,flagged_long,734,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,0,0,0
+T0109,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0046,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0081,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0007,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0068,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0085,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0075,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0052,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0066,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0151,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0131,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0006,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0135,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0079,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0040,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0093,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0089,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0034,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0033,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0160,skipped_empty,0,,0,0,0
+T0087,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0009,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0108,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0054,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0025,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0004,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0148,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0088,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0030,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0067,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0029,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0129,ready,21,I was charged twice for order [ORDER_ID]. Please refund the extra payment. My email is [EMAIL],1,0,1
+T0105,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0045,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0069,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0010,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0023,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0106,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0015,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0091,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0126,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0096,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0149,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0070,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0026,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0097,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0132,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0027,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0119,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0157,skipped_empty,0,,0,0,0
+T0058,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0110,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0018,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0032,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0003,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0042,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0056,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0114,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0083,ready,12,"I cannot login, the OTP never arrives on [PHONE].",0,1,0
+T0138,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0057,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0076,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0019,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0103,ready,23,The payment page shows an error and the app freezes when I apply a coupon. Order [ORDER_ID].,0,0,1
+T0164,flagged_long,734,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,0,0,0
+T0090,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0112,ready,25,"I was charged for order [ORDER_ID] that I never made, it looks like fraud on my account. Call [PHONE].",0,1,1
+T0133,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0014,ready,20,"Delivery for [ORDER_ID] is very late, it was promised in 20 minutes. Write to [EMAIL]",1,0,1
+T0158,skipped_empty,0,,0,0,0
+T0020,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0142,ready,23,My order [ORDER_ID] has not arrived and the rider is not picking up calls. Please call [PHONE].,0,1,1
+T0086,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0141,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0044,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0117,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0078,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0140,ready,25,There is an unauthorized transaction on my card linked to order [ORDER_ID]. I did not place it. Call [PHONE].,0,1,1
+T0071,ready,28,The app crashes every time I open the cart. I tried to place [ORDER_ID] again and got an error. Email [EMAIL],1,0,1
+T0161,flagged_long,734,My delivery was late. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet. The same problem keeps happening and nobody has given me a clear answer yet.,0,0,0
+T0150,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1
+T0065,ready,21,The invoice for [ORDER_ID] shows a wrong amount. Call me on [PHONE] to correct the bill.,0,1,1
+T0128,ready,19,"Someone hacked my account and used my wallet balance. This is fraud, contact [EMAIL]",1,0,0
+T0005,ready,17,"Extra money was deducted for order [ORDER_ID], please check the bill. Contact [EMAIL]",1,0,1
+T0098,ready,19,The rider marked [ORDER_ID] as delivered but I never received the package. Call [PHONE].,0,1,1

@@ -1,0 +1,165 @@
+ticket_id,status,category,reason,tokens_used
+T0024,classified_json,fraud,keyword match,157
+T0073,classified_json,billing,keyword match,153
+T0095,classified_json,technical,keyword match,155
+T0159,skipped_empty,,,0
+T0080,classified_json,fraud,keyword match,157
+T0124,classified_json,fraud,keyword match,157
+T0061,classified_json,billing,keyword match,149
+T0118,classified_json,delivery,keyword match,152
+T0037,classified_json,billing,keyword match,153
+T0002,classified_json,delivery,keyword match,151
+T0163,flagged_long,,,0
+T0031,classified_json,technical,keyword match,155
+T0047,classified_json,technical,keyword match,144
+T0063,classified_json,technical,keyword match,144
+T0121,classified_keyword,billing,,157
+T0139,classified_json,technical,keyword match,160
+T0115,classified_json,technical,keyword match,144
+T0123,classified_json,technical,keyword match,144
+T0116,flagged_invalid_output,,,157
+T0136,classified_json,fraud,keyword match,151
+T0008,classified_json,fraud,keyword match,157
+T0102,classified_json,delivery,keyword match,155
+T0072,classified_json,fraud,keyword match,157
+T0101,classified_json,billing,keyword match,153
+T0059,classified_json,technical,keyword match,144
+T0049,classified_json,billing,keyword match,153
+T0153,classified_json,billing,keyword match,149
+T0050,classified_keyword,delivery,,155
+T0147,classified_json,technical,keyword match,155
+T0074,classified_json,delivery,keyword match,151
+T0156,classified_json,fraud,keyword match,157
+T0145,classified_json,billing,keyword match,153
+T0053,classified_json,billing,keyword match,153
+T0134,classified_json,delivery,keyword match,155
+T0039,classified_json,technical,keyword match,160
+T0016,flagged_invalid_output,,,157
+T0055,classified_json,technical,keyword match,160
+T0130,classified_json,delivery,keyword match,155
+T0099,classified_json,technical,keyword match,160
+T0062,classified_json,delivery,keyword match,151
+T0013,classified_keyword,billing,,157
+T0137,classified_json,billing,keyword match,153
+T0152,classified_json,fraud,keyword match,157
+T0144,classified_json,fraud,keyword match,157
+T0094,classified_json,delivery,keyword match,155
+T0021,classified_json,billing,keyword match,149
+T0077,classified_json,billing,keyword match,149
+T0036,classified_json,fraud,keyword match,157
+T0113,classified_json,billing,keyword match,149
+T0060,classified_json,fraud,keyword match,157
+T0043,classified_json,technical,keyword match,144
+T0048,classified_json,fraud,keyword match,151
+T0154,flagged_invalid_output,,,155
+T0125,classified_keyword,billing,,153
+T0146,classified_json,delivery,keyword match,152
+T0107,classified_json,technical,keyword match,144
+T0011,classified_json,technical,keyword match,160
+T0017,classified_json,billing,keyword match,153
+T0111,classified_json,technical,keyword match,144
+T0041,classified_json,billing,keyword match,153
+T0120,classified_json,fraud,keyword match,157
+T0122,classified_json,delivery,keyword match,151
+T0001,classified_json,billing,keyword match,153
+T0064,classified_json,fraud,keyword match,157
+T0092,classified_json,fraud,keyword match,151
+T0038,classified_json,delivery,keyword match,151
+T0155,classified_keyword,technical,,164
+T0104,classified_json,fraud,keyword match,151
+T0012,classified_json,fraud,keyword match,157
+T0084,flagged_invalid_output,,,157
+T0051,classified_json,technical,keyword match,144
+T0143,classified_json,technical,keyword match,160
+T0035,classified_json,technical,keyword match,155
+T0028,classified_json,fraud,keyword match,157
+T0100,classified_json,fraud,keyword match,157
+T0022,classified_json,delivery,keyword match,155
+T0082,classified_json,delivery,keyword match,151
+T0127,classified_json,technical,keyword match,155
+T0162,flagged_long,,,0
+T0109,classified_json,billing,keyword match,153
+T0046,classified_keyword,delivery,,159
+T0081,classified_json,billing,keyword match,153
+T0007,classified_json,technical,keyword match,144
+T0068,classified_json,fraud,keyword match,157
+T0085,classified_json,billing,keyword match,153
+T0075,classified_json,technical,keyword match,160
+T0052,classified_json,fraud,keyword match,157
+T0066,flagged_invalid_output,,,155
+T0151,classified_json,technical,keyword match,144
+T0131,classified_json,technical,keyword match,144
+T0006,classified_json,delivery,keyword match,152
+T0135,classified_json,technical,keyword match,155
+T0079,classified_json,technical,keyword match,144
+T0040,classified_keyword,fraud,,161
+T0093,classified_json,billing,keyword match,153
+T0089,classified_json,billing,keyword match,149
+T0034,classified_json,delivery,keyword match,155
+T0033,classified_json,billing,keyword match,153
+T0160,skipped_empty,,,0
+T0087,classified_json,technical,keyword match,160
+T0009,classified_json,billing,keyword match,153
+T0108,classified_json,fraud,keyword match,157
+T0054,classified_json,delivery,keyword match,152
+T0025,classified_json,billing,keyword match,153
+T0004,classified_json,fraud,keyword match,157
+T0148,flagged_invalid_output,,,157
+T0088,classified_json,fraud,keyword match,151
+T0030,classified_keyword,delivery,,156
+T0067,classified_json,technical,keyword match,144
+T0029,classified_json,billing,keyword match,153
+T0129,classified_json,billing,keyword match,153
+T0105,classified_json,billing,keyword match,149
+T0045,classified_json,billing,keyword match,153
+T0069,classified_json,billing,keyword match,153
+T0010,classified_json,delivery,keyword match,152
+T0023,classified_json,technical,keyword match,144
+T0106,classified_json,delivery,keyword match,152
+T0015,classified_json,technical,keyword match,155
+T0091,classified_json,technical,keyword match,160
+T0126,classified_json,delivery,keyword match,151
+T0096,classified_keyword,fraud,,161
+T0149,classified_json,billing,keyword match,153
+T0070,flagged_invalid_output,,,152
+T0026,classified_json,delivery,keyword match,152
+T0097,classified_json,billing,keyword match,149
+T0132,classified_json,fraud,keyword match,157
+T0027,classified_json,technical,keyword match,155
+T0119,classified_json,technical,keyword match,155
+T0157,skipped_empty,,,0
+T0058,classified_json,delivery,keyword match,152
+T0110,classified_json,delivery,keyword match,155
+T0018,classified_json,delivery,keyword match,152
+T0032,classified_json,fraud,keyword match,157
+T0003,classified_json,technical,keyword match,144
+T0042,classified_keyword,delivery,,155
+T0056,classified_json,fraud,keyword match,157
+T0114,classified_json,delivery,keyword match,151
+T0083,classified_json,technical,keyword match,144
+T0138,classified_json,delivery,keyword match,152
+T0057,classified_json,billing,keyword match,149
+T0076,flagged_invalid_output,,,157
+T0019,classified_json,technical,keyword match,160
+T0103,classified_json,technical,keyword match,155
+T0164,flagged_long,,,0
+T0090,classified_json,delivery,keyword match,155
+T0112,classified_json,fraud,keyword match,157
+T0133,classified_json,billing,keyword match,149
+T0014,classified_json,delivery,keyword match,152
+T0158,skipped_empty,,,0
+T0020,classified_keyword,fraud,,161
+T0142,classified_json,delivery,keyword match,155
+T0086,classified_json,delivery,keyword match,151
+T0141,classified_json,billing,keyword match,149
+T0044,classified_json,fraud,keyword match,151
+T0117,classified_json,billing,keyword match,149
+T0078,classified_json,delivery,keyword match,151
+T0140,classified_json,fraud,keyword match,157
+T0071,classified_json,technical,keyword match,160
+T0161,flagged_long,,,0
+T0150,classified_json,delivery,keyword match,151
+T0065,flagged_invalid_output,,,153
+T0128,classified_json,fraud,keyword match,151
+T0005,classified_json,billing,keyword match,149
+T0098,classified_keyword,delivery,,155

@@ -1,0 +1,165 @@
+ticket_id,status,category,reason,tokens_used
+T0024,classified_json,fraud,keyword match,78
+T0073,classified_json,billing,keyword match,74
+T0095,classified_json,billing,keyword match,76
+T0159,skipped_empty,,,0
+T0080,classified_json,billing,keyword match,78
+T0124,classified_json,billing,keyword match,78
+T0061,classified_json,billing,keyword match,70
+T0118,classified_json,delivery,keyword match,73
+T0037,classified_json,billing,keyword match,74
+T0002,classified_json,delivery,keyword match,72
+T0163,flagged_long,,,0
+T0031,classified_json,billing,keyword match,76
+T0047,classified_json,technical,keyword match,65
+T0063,classified_json,technical,keyword match,65
+T0121,classified_keyword,billing,,78
+T0139,classified_json,technical,keyword match,81
+T0115,classified_json,technical,keyword match,65
+T0123,classified_json,technical,keyword match,65
+T0116,flagged_invalid_output,,,78
+T0136,classified_json,fraud,keyword match,72
+T0008,classified_json,fraud,keyword match,78
+T0102,classified_json,delivery,keyword match,76
+T0072,classified_json,billing,keyword match,78
+T0101,classified_json,billing,keyword match,74
+T0059,classified_json,technical,keyword match,65
+T0049,classified_json,billing,keyword match,74
+T0153,classified_json,billing,keyword match,70
+T0050,classified_keyword,delivery,,76
+T0147,classified_json,billing,keyword match,76
+T0074,classified_json,delivery,keyword match,72
+T0156,classified_json,fraud,keyword match,78
+T0145,classified_json,billing,keyword match,74
+T0053,classified_json,billing,keyword match,74
+T0134,classified_json,delivery,keyword match,76
+T0039,classified_json,technical,keyword match,81
+T0016,flagged_invalid_output,,,78
+T0055,classified_json,technical,keyword match,81
+T0130,classified_json,delivery,keyword match,76
+T0099,classified_json,technical,keyword match,81
+T0062,classified_json,delivery,keyword match,72
+T0013,classified_keyword,billing,,78
+T0137,classified_json,billing,keyword match,74
+T0152,classified_json,billing,keyword match,78
+T0144,classified_json,billing,keyword match,78
+T0094,classified_json,delivery,keyword match,76
+T0021,classified_json,billing,keyword match,70
+T0077,classified_json,billing,keyword match,70
+T0036,classified_json,billing,keyword match,78
+T0113,classified_json,billing,keyword match,70
+T0060,classified_json,fraud,keyword match,78
+T0043,classified_json,technical,keyword match,65
+T0048,classified_json,fraud,keyword match,72
+T0154,flagged_invalid_output,,,76
+T0125,classified_keyword,billing,,74
+T0146,classified_json,delivery,keyword match,73
+T0107,classified_json,technical,keyword match,65
+T0011,classified_json,technical,keyword match,81
+T0017,classified_json,billing,keyword match,74
+T0111,classified_json,technical,keyword match,65
+T0041,classified_json,billing,keyword match,74
+T0120,classified_json,fraud,keyword match,78
+T0122,classified_json,delivery,keyword match,72
+T0001,classified_json,billing,keyword match,74
+T0064,classified_json,fraud,keyword match,78
+T0092,classified_json,fraud,keyword match,72
+T0038,classified_json,delivery,keyword match,72
+T0155,classified_keyword,technical,,85
+T0104,classified_json,fraud,keyword match,72
+T0012,classified_json,billing,keyword match,78
+T0084,flagged_invalid_output,,,78
+T0051,classified_json,technical,keyword match,65
+T0143,classified_json,technical,keyword match,81
+T0035,classified_json,billing,keyword match,76
+T0028,classified_json,fraud,keyword match,78
+T0100,classified_json,fraud,keyword match,78
+T0022,classified_json,delivery,keyword match,76
+T0082,classified_json,delivery,keyword match,72
+T0127,classified_json,billing,keyword match,76
+T0162,flagged_long,,,0
+T0109,classified_json,billing,keyword match,74
+T0046,classified_keyword,delivery,,80
+T0081,classified_json,billing,keyword match,74
+T0007,classified_json,technical,keyword match,65
+T0068,classified_json,billing,keyword match,78
+T0085,budget_exhausted,,,0
+T0075,budget_exhausted,,,0
+T0052,budget_exhausted,,,0
+T0066,budget_exhausted,,,0
+T0151,budget_exhausted,,,0
+T0131,budget_exhausted,,,0
+T0006,budget_exhausted,,,0
+T0135,budget_exhausted,,,0
+T0079,budget_exhausted,,,0
+T0040,budget_exhausted,,,0
+T0093,budget_exhausted,,,0
+T0089,budget_exhausted,,,0
+T0034,budget_exhausted,,,0
+T0033,budget_exhausted,,,0
+T0160,skipped_empty,,,0
+T0087,budget_exhausted,,,0
+T0009,budget_exhausted,,,0
+T0108,budget_exhausted,,,0
+T0054,budget_exhausted,,,0
+T0025,budget_exhausted,,,0
+T0004,budget_exhausted,,,0
+T0148,budget_exhausted,,,0
+T0088,budget_exhausted,,,0
+T0030,budget_exhausted,,,0
+T0067,budget_exhausted,,,0
+T0029,budget_exhausted,,,0
+T0129,budget_exhausted,,,0
+T0105,budget_exhausted,,,0
+T0045,budget_exhausted,,,0
+T0069,budget_exhausted,,,0
+T0010,budget_exhausted,,,0
+T0023,budget_exhausted,,,0
+T0106,budget_exhausted,,,0
+T0015,budget_exhausted,,,0
+T0091,budget_exhausted,,,0
+T0126,budget_exhausted,,,0
+T0096,budget_exhausted,,,0
+T0149,budget_exhausted,,,0
+T0070,budget_exhausted,,,0
+T0026,budget_exhausted,,,0
+T0097,budget_exhausted,,,0
+T0132,budget_exhausted,,,0
+T0027,budget_exhausted,,,0
+T0119,budget_exhausted,,,0
+T0157,skipped_empty,,,0
+T0058,budget_exhausted,,,0
+T0110,budget_exhausted,,,0
+T0018,budget_exhausted,,,0
+T0032,budget_exhausted,,,0
+T0003,budget_exhausted,,,0
+T0042,budget_exhausted,,,0
+T0056,budget_exhausted,,,0
+T0114,budget_exhausted,,,0
+T0083,budget_exhausted,,,0
+T0138,budget_exhausted,,,0
+T0057,budget_exhausted,,,0
+T0076,budget_exhausted,,,0
+T0019,budget_exhausted,,,0
+T0103,budget_exhausted,,,0
+T0164,flagged_long,,,0
+T0090,budget_exhausted,,,0
+T0112,budget_exhausted,,,0
+T0133,budget_exhausted,,,0
+T0014,budget_exhausted,,,0
+T0158,skipped_empty,,,0
+T0020,budget_exhausted,,,0
+T0142,budget_exhausted,,,0
+T0086,budget_exhausted,,,0
+T0141,budget_exhausted,,,0
+T0044,budget_exhausted,,,0
+T0117,budget_exhausted,,,0
+T0078,budget_exhausted,,,0
+T0140,budget_exhausted,,,0
+T0071,budget_exhausted,,,0
+T0161,flagged_long,,,0
+T0150,budget_exhausted,,,0
+T0065,budget_exhausted,,,0
+T0128,budget_exhausted,,,0
+T0005,budget_exhausted,,,0
+T0098,budget_exhausted,,,0

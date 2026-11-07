@@ -1,0 +1,27 @@
+question,expected_doc,retrieved_docs,document_hit,expected_fact,fact_found_in_answer,fallback_correct,answer,tokens_used
+What delivery time makes a completed order eligible for a full refund?,refund_policy.txt,delivery_policy.txt;refund_policy.txt,True,more than 45 minutes,False,,receives a full refund of the order amount.,190
+Who must approve a refund above INR 1000?,refund_policy.txt,refund_policy.txt,True,human support lead,False,,"A refund above INR
+
+ 
+Refund Policy.",207
+How many days do I have to raise a refund request?,refund_policy.txt,refund_policy.txt,True,within 7 days,True,,A refund request must be raised within 7 days of the delivery date.,220
+What is the delivery fee on small orders?,delivery_policy.txt,delivery_policy.txt;payment_policy.txt;refund_policy.txt,True,INR 25,True,,"A delivery fee of INR 25 is charged on orders below INR 199,
+
+ 
+Payment Policy.",220
+On orders of what value is delivery free?,delivery_policy.txt,delivery_policy.txt;payment_policy.txt,True,INR 199 or more,True,,and delivery is free on orders of INR 199 or more.,215
+Why does the electronics delivery need a one time password?,delivery_policy.txt,delivery_policy.txt,True,one time password,True,,Electronics items are delivered only after the customer shares a one time password with the rider.,198
+Is cash on delivery available for a large order?,payment_policy.txt,delivery_policy.txt;payment_policy.txt,True,INR 2500,True,,Cash on delivery is available only for orders up to INR 2500.,218
+How soon is money returned when a payment fails but is deducted?,payment_policy.txt,payment_policy.txt;privacy_policy.txt;refund_policy.txt,True,48 hours,False,,"If a payment fails but money is deducted, the amount is returned automatically
+
+ 
+1000 must be approved by a human support lead before money is returned.",223
+Can wallet balance be refunded as cash?,payment_policy.txt,payment_policy.txt,True,never refunded as cash,True,,Wallet balance can be used for any order and is never refunded as cash.,174
+When are delivery addresses deleted from active systems?,privacy_policy.txt,delivery_policy.txt;payment_policy.txt;privacy_policy.txt,True,180 days,True,,"Delivery addresses are deleted from active systems 180 days after
+
+ 
+Delivery Policy.",216
+How fast must a fraud ticket reach the security team?,escalation_policy.txt,escalation_policy.txt;payment_policy.txt,True,within 2 hours,True,,A ticket about fraud or an unauthorized transaction is marked high priority and sent to the security team within 2 hours.,228
+After how many steps must an automated assistant hand over to a human?,escalation_policy.txt,escalation_policy.txt;privacy_policy.txt;refund_policy.txt,True,6 steps,True,,"an automated assistant cannot resolve a ticket within 6 steps, it must hand the case to a human agent with a short summary.",233
+What is the favourite colour of the company mascot?,NONE,refund_policy.txt,,,,True,I could not find that information in the policy documents.,213
+Who won the cricket world cup final?,NONE,refund_policy.txt,,,,True,I could not find that information in the policy documents.,211
